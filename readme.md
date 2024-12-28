@@ -12,7 +12,7 @@ Anyways onto the project.
 
 # Problem Statement
 
-While I was enjoying the game, there is something that I feel is missing, a lot of people in my sphere were actively checking in on the currency exchange in game, because they wanted to see where to invest early to make some big money (In-game).
+While I was enjoying the game, there is something that I feel is missing, a lot of people in my sphere were actively checking in on the currency exchange in game, because they wanted to see where to invest early to make some big money (In-game). But there is a problem! It is currently not possible to check on the currency exchange except for ingame or via the poe trade website (which currently is not good for data viewing and has no price history).
 
 Now I want to create a simple site that has all the conversion ratios easy to acess on a simple site, not overly complex to get started with.
 
