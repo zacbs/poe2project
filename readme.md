@@ -24,4 +24,77 @@ GGG has not provided an open API as of yet for poe2 however nothing says I can't
 
 ### Stack
 
-MERN for the site
+MERN for the site, since that is all I have learned except flask so far! I should do this in TS but this is just a refresher so should be good.
+
+### Backend design
+
+Fleshing out what I will need to store in the database,
+
+Inital thoughts: Need to flesh this out, my first thought is to pull all the data from poe2 trade and then store this in the trades table. I will then run some statistical analysis on them to create the data for the prices table.
+
+Currently I have the prices of the currencies in the prices table stored as integers but now that I'm thinking more about it, possibly I should store them as dicts instead (BSON object?)
+
+Also I have written integer a few times here however this is incorrect as it should be a float / decimal, I will need to go back and update.
+
+**prices**
+
+<!-- Might need to change these to objects for the price values -->
+
+id, currency_id, x_price, d_price, m_price, polled_time
+
+id = Primary Key
+
+currency_id = foreign key
+
+x_price = Price of the Currency Item in Exalted Orbs (integer)
+
+d_price = Price of the Currency Item in Divine Orbs (integer)
+
+x_price = Price of the Currency Item in Mirror of Kalandras (integer)
+
+polled_time = When these prices were calculated (date)
+
+**currencys**
+
+id, currency
+
+id = Primary Key
+
+currency = Currency item (string)
+
+**x_trades**
+
+id, currency_id, x_value
+
+id = Primary Key
+
+currency_id = foreign key
+
+x_value = value of the currency for this transaction (integer)
+
+**d_trades**
+
+id, currency_id, d_value
+
+id = Primary Key
+
+currency_id = foreign key
+
+d_value = value of the currency for this transaction (integer)
+
+**m_trades**
+
+id, currency_id, m_value
+
+id = Primary Key
+
+currency_id = foreign key
+
+m_value = value of the currency for this transaction (integer)
+
+## For later
+
+*_price object
+
+q1, q2, q3, q4, avg, min, max, distribution, volume
+
