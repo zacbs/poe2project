@@ -26,7 +26,7 @@ GGG has not provided an open API as of yet for poe2 however nothing says I can't
 
 MERN for the site, since that is all I have learned except flask so far! I should do this in TS but this is just a refresher so should be good.
 
-### Backend design
+## Backend design
 
 Fleshing out what I will need to store in the database,
 
