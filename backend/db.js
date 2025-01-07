@@ -3,12 +3,17 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
-// Open a connection to the database
-try {
-await mongoose.connect(process.env.ATLAS_DB_URL)
-} catch (err) {
-  console.error(err)
+// Function to close connection to the database
+async function dbClose() {
+  await mongoose.connection.close()
 }
+
+// Open a connection to the database
+
+await mongoose.connect(process.env.ATLAS_DB_URL)
+.then(() => console.log('Connected to MongoDB'))
+.catch(err => console.error('Error connecting to MongoDB', err));
+
 // Defining the price schema & than calling into into the Price Model
 // Refered to this in the readme file, these decimals will need to be replaced with an object or a document, as this won't be one thing it will likely be a few values.
 
@@ -57,4 +62,4 @@ const m_tradeSchema = new mongoose.Schema({
 
 const M_tradeModel = mongoose.model('M_trade', m_tradeSchema)
 
-export { PriceModel, CurrencyModel, X_tradeModel, D_tradeModel, M_tradeModel,}
+export { PriceModel, CurrencyModel, X_tradeModel, D_tradeModel, M_tradeModel, dbClose }
