@@ -50,7 +50,7 @@ x_price = Price of the Currency Item in Exalted Orbs (integer)
 
 d_price = Price of the Currency Item in Divine Orbs (integer)
 
-x_price = Price of the Currency Item in Mirror of Kalandras (integer)
+m_price = Price of the Currency Item in Mirror of Kalandras (integer)
 
 polled_time = When these prices were calculated (date)
 
