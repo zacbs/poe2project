@@ -6,7 +6,7 @@ dotenv.config()
 // Open a connection to the database
 await mongoose.connect(process.env.ATLAS_DB_URL)
 
-// Defining the prices schema
+// Defining the price schema & than calling into into the Price Model
 
 const priceSchema = new mongoose.Schema({
   currency_id: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Currency', required: true}],
@@ -16,5 +16,14 @@ const priceSchema = new mongoose.Schema({
   polled_time: { type: Date, required: true},
 })
 
-// Defining the Price model from the schema
 const PriceModel = mongoose.model('Price', priceSchema)
+
+// Defining the currency schema & than calling into into the Price Model
+
+const currencySchema = new mongoose.Schema({
+  currency: { type: String, required: true}
+})
+
+const CurrencyModel = mongoose.model('Currency', currencySchema)
+
+export { PriceModel, CurrencyModel, }
