@@ -30,7 +30,8 @@ const PriceModel = mongoose.model('Price', priceSchema)
 // Defining the currency schema & than calling into into the currency Model
 
 const currencySchema = new mongoose.Schema({
-  currency: { type: String, required: true}
+  currency: { type: String, required: true},
+  order: { type: Number, required: true}
 })
 
 const CurrencyModel = mongoose.model('Currency', currencySchema)
